@@ -1,0 +1,82 @@
+$big-font: 'Space Grotesk', sans-serif;
+$small-font: 'inter';
+$big-font-color: rgba(8, 19, 50, 1);
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  // font-family: 'Space Grotesk', sans-serif;
+  font-family: 'inter';
+  // font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    // Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* styles.module.css */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 800vh;
+}
+
+.div {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  background-color: #f0f0f0;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.div.visible {
+  opacity: 1;
+}
+
+/* styles.module.css */
+
+.section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  background-color: #f0f0f0;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.section.visible {
+  opacity: 1;
+}
+
+
+
+
+
+.sans-90 {
+  font-size: 40px;
+  font-size: clamp(40px,-16.98366px + 7.42942vw,90px);
+  line-height: 1.11;
+  padding: 5rem 1rem 0.5rem 5rem;
+}
+
+.arrow{
+  width: 5rem;
+  cursor: pointer;
+  &:hover{
+    width: 6rem;
+    transition: width 0.5s ease-in-out;
+  }
+}
