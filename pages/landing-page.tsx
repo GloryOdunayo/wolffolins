@@ -4,6 +4,7 @@
 import NavBar from "../components/NavBar";  
 import InstaCard from "../components/InstaCard";
 import Showreel from "../components/Showreel";
+import Gsk from "../components/Gsk";
 const Home = () => {
   return (
     <div>
@@ -11,10 +12,8 @@ const Home = () => {
       <NavBar leftColor="rgb(255,235,0)" rightColor="rgb(255,235,0)" />
       {/* <ScrollingSection /> */}
       <Showreel />
-      <div className="">
-
       <InstaCard />
-      </div>
+      <Gsk />
     </div>
   );
 };

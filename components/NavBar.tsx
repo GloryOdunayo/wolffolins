@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from 'next/image';
 import logo from '../public/logo.png';
 import React from "react";
-import styles from '../styles/NavBar.module.scss';
+// import styles from '../styles/Navbar.module.scss';
 
 interface NavBarProps {
     leftColor: string;
@@ -12,7 +12,6 @@ interface NavBarProps {
 const NavBar: React.FC<NavBarProps> = ({ leftColor, rightColor }) => {
     return (
     <>
-        <div className={styles.navbar}>
             <nav className="navbar bg-body-transparent">
                 <div className="container-fluid">
                     <Link className="navbar-brand" href="/">
@@ -64,7 +63,8 @@ const NavBar: React.FC<NavBarProps> = ({ leftColor, rightColor }) => {
                     <div className="bg" style={{width:'4rem', height: '4rem', backgroundColor: `${rightColor}`, borderRadius:'50%'}}></div>
                 </div>
             </nav>
-        </div>
+        {/* // <div className={styles.navbar}>
+        // </div> */}
     </>
 );
 };

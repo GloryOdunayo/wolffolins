@@ -3,6 +3,10 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
+import NavBar from '../components/NavBar'
+import Showreel from '../components/Showreel'
+import InstaCard from '../components/InstaCard'
+import Gsk from '../components/Gsk'
 
 const Home: NextPage = () => {
   return (
@@ -13,6 +17,11 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
+      <NavBar leftColor="rgb(255,235,0)" rightColor="rgb(255,235,0)" />
+      {/* <ScrollingSection /> */}
+      <Showreel />
+      <InstaCard />
+      <Gsk />
       </main>
     </div>
   )
