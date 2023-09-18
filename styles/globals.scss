@@ -73,7 +73,10 @@ a {
 }
 
 .arrow{
-  width: 5rem;
+  // width: 5rem;
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
   cursor: pointer;
   &:hover{
     width: 6rem;

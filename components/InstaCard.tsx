@@ -6,8 +6,8 @@ const InstaCard = () => {
   return (
     <div>
       {/* <h1>Welcome to Next.js Scrolling Sections</h1> */}
-      <NavBar leftColor="rgb(255,235,0)" rightColor="rgb(255,235,0)" />
-      <div className="video-container">
+      {/* <NavBar leftColor="rgb(255,235,0)" rightColor="rgb(255,235,0)" /> */}
+      <div className="video-container position-relative">
         <video className="video-background" poster="https://wolffolins.b-cdn.net/wolffolins/fa9dbaef-d9d3-4ee2-9006-aafc67e3043f_01_Instacart_Loader.jpg?auto=compress,format" loop autoPlay>
             <source src="https://wolffolins.b-cdn.net/wolffolins/54f4312d-4f2b-4b63-ac53-d6b761d0d0ed_05_Instacart_Loader.mp4" type="" />
         </video>
