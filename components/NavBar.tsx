@@ -12,7 +12,7 @@ interface NavBarProps {
 const NavBar: React.FC<NavBarProps> = ({ leftColor, rightColor }) => {
     return (
     <>
-            <nav className="navbar bg-body-transparent">
+        <nav className="navbar bg-body-transparent position-fixed container-fluid" style={{zIndex: '99'}}>
                 <div className="container-fluid">
                     <Link className="navbar-brand" href="/">
                         <div className="col-2 d-flex">
@@ -62,9 +62,7 @@ const NavBar: React.FC<NavBarProps> = ({ leftColor, rightColor }) => {
                     </Link>
                     <div className="bg" style={{width:'4rem', height: '4rem', backgroundColor: `${rightColor}`, borderRadius:'50%'}}></div>
                 </div>
-            </nav>
-        {/* // <div className={styles.navbar}>
-        // </div> */}
+        </nav>
     </>
 );
 };
