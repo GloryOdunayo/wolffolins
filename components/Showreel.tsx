@@ -3,12 +3,12 @@ import React from 'react'
 const Showreel = () => {
   return (
     <>
-        <div style={{backgroundColor:"rgb(255,235,0)"}} className='video-container'>
+        <div style={{backgroundColor:"rgb(255,235,0)"}} className='video-container my-auto'>
         <h2 className="sans-90">We help create transformative brands that move businesses, people and the world forward</h2>
         <span className="arrow">
           <svg xmlns="http://www.w3.org/2000/svg" className="arrow"><marker id="marker-345" refX="13" refY="8" viewBox="0 0 6 4"><path d="M9.5,9.1L0,14.5l1,1.7l14.4-8.1L1,0L0,1.7l9.5,5.4V9.1z"></path></marker> <line marker-end="url(#marker-345)" x1="0" y1="50%" x2="93%" y2="50%"></line>
           </svg> 
-          <span className="sans-25">Play showreel</span>
+          <h3 className="sans-25">Play showreel</h3>
         </span>
       </div>
     </>

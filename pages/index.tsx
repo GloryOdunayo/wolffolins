@@ -7,6 +7,18 @@ import NavBar from '../components/NavBar'
 import Showreel from '../components/Showreel'
 import InstaCard from '../components/InstaCard'
 import Gsk from '../components/Gsk'
+import Xpeng from '../components/Xpeng'
+import Workspace from '../components/Workspace'
+import Tiktok from '../components/Tiktok'
+import Uber from '../components/Uber'
+import McKinsey from '../components/McKinsey'
+import Economist from '../components/Economist'
+import DailyPay from '../components/DailyPay'
+import Abrdn from '../components/Abrdn'
+import TheMet from '../components/TheMet'
+import Sage from '../components/Sage'
+import Leeum from '../components/Leeum'
+import Footer from '../components/Footer'
 
 const Home: NextPage = () => {
   return (
@@ -22,6 +34,26 @@ const Home: NextPage = () => {
         <Showreel />
         <InstaCard />
         <Gsk />
+        <Xpeng />
+        <Workspace />
+        <Tiktok />
+        <Uber />
+        <McKinsey/>
+        <Economist/>
+        <DailyPay/>
+        <Abrdn/>
+        <TheMet/>
+        <Sage/>
+        <Leeum/>
+        <div className="" style={{height:'', backgroundColor:'black'}}>
+          <span className="text-white">
+            <div className="home-block--details"><a href="" className=""><h3>Let&apos;s talk about you</h3>
+              <p className="serif-18"></p>
+              </a>
+            </div>
+          </span>
+        </div>
+        <Footer/>
       </main>
     </div>
   )

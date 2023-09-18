@@ -13,7 +13,7 @@ const Gsk = () => {
                 <span className="sans-25">Instacart</span>
             </span> */}
             {/* <p className="serif-18">GSK: A brand that brings science and tech to life</p> */}
-            <div className="home-block--details arrow"><a href="/case-study/gsk" className=""><h3>GSK </h3> <p className="serif-18">GSK: A brand that brings science and tech to life</p> <span className="arrow-link"><svg xmlns="http://www.w3.org/2000/svg" className="arrow"><marker id="marker-318" refX="13" refY="8" viewBox="0 0 6 4"><path d="M9.5,9.1L0,14.5l1,1.7l14.4-8.1L1,0L0,1.7l9.5,5.4V9.1z"></path></marker> <line marker-end="url(#marker-318)" x1="0" y1="50%" x2="93%" y2="50%"></line></svg> <span className="sans-25"></span></span></a></div>
+            <div className="home-block--details arrow text-white"><a href="/case-study/gsk" className=""><h3>GSK </h3> <p className="serif-18">GSK: A brand that brings science and tech to life</p> <span className="arrow-link"><svg xmlns="http://www.w3.org/2000/svg" className="arrow"><marker id="marker-318" refX="13" refY="8" viewBox="0 0 6 4"><path d="M9.5,9.1L0,14.5l1,1.7l14.4-8.1L1,0L0,1.7l9.5,5.4V9.1z"></path></marker> <line marker-end="url(#marker-318)" x1="0" y1="50%" x2="93%" y2="50%"></line></svg> <span className="sans-25"></span></span></a></div>
         </div>
     </>
   )
