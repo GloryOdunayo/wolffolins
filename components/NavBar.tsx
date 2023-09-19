@@ -119,7 +119,7 @@ const NavBar:React.FC<NavBarProps> = ({ leftColor, rightColor,activeComponent, t
     setWord(initialWord);
   };
   if(textColor==='white'){
-    rgColor= 'yellow';
+    rgColor= 'rgb(255,235,0)';
   } else {
     rgColor='black'
   }

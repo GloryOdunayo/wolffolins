@@ -31,7 +31,7 @@ const Home: NextPage = () => {
   };
   const updateTextColor = (componentName: string) => {
     if (componentName === 'Showreel') {
-      return 'black';
+      return 'white';
     } else if (componentName === 'InstaCard') {
       return 'black';
     } else if (componentName === 'Gsk') {
@@ -59,8 +59,7 @@ const Home: NextPage = () => {
     } else if (componentName === 'Leeum') {
       return 'white';
     }
-    // Add more conditions as needed
-    return 'white'; // Default color if no condition matches
+    return 'white';
   };
   React.useEffect(() => {
     const handleScroll = () => {
@@ -155,9 +154,9 @@ const Home: NextPage = () => {
         </Waypoint>
         <Waypoint onEnter={() => handleWaypointEnter('')} topOffset="30%" bottomOffset="1%">
           <div className="" style={{height:'', backgroundColor:'black'}}>
-            <div className="py-5">
+            <div className="py-5 px-4">
               <span className="text-white">
-                <div className="home-block--details"><a href="" className=""><h3>Let&apos;s talk about you</h3>
+                <div className=""><a href="" className=""><h3>Let&apos;s talk about you</h3>
                   <p className="serif-18"><i className="fa fa-arrow-right" aria-hidden="true"></i> <span className="text">Get in touch</span></p>
                   </a>
                 </div>

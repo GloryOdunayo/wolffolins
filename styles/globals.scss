@@ -87,10 +87,11 @@ a {
   vertical-align: middle !important;
   justify-content: center !important;
   align-items: center !important;
-  padding: auto !important;
-  // padding: 5rem 0.1rem 5rem 5rem;
+  // padding: auto !important;
+  padding: 0rem 0.1rem 0rem 3rem;
   // margin: auto;
   vertical-align: middle !important;
+  letter-spacing: -.02em;
 }
 .serif-18{
   font-size: clamp(16px,13.72065px + .29718vw,18px);
