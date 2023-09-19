@@ -8,6 +8,8 @@ import { AppContextProvider, useAppContext } from "./AppContext";
 interface NavBarProps {
     leftColor: string;
     rightColor: string;
+    activeComponent: string;
+  textColor: string
 }
 
 // const NavBar: React.FC<NavBarProps> = ({ leftColor, rightColor }) => {
@@ -73,7 +75,7 @@ interface NavBarProps {
 //     </>
 // );
 // };
-const NavBar:React.FC<NavBarProps> = ({ leftColor, rightColor }) => {
+const NavBar:React.FC<NavBarProps> = ({ leftColor, rightColor,activeComponent, textColor }) => {
   const initialWord = 'WOLFF<br>OLINS';
   const [word, setWord] = React.useState(initialWord);
   const [randomLetter, setRandomLetter] = React.useState('');
@@ -106,12 +108,22 @@ const NavBar:React.FC<NavBarProps> = ({ leftColor, rightColor }) => {
     //   letters.splice(5, 0, '<br>');
     // }
   };
+  let rgColor;
   
-
+  const navBarStyle = {
+    backgroundColor: textColor === 'black' ? leftColor : rightColor,
+    // Add other styles for your navbar
+  };
   const handleMouseLeave = () => {
     setRandomLetter('');
     setWord(initialWord);
   };
+  if(textColor==='white'){
+    rgColor= 'yellow';
+  } else {
+    rgColor='black'
+  }
+  // console.log(textColor)
   return (
     <>
       <AppContextProvider>
@@ -120,7 +132,7 @@ const NavBar:React.FC<NavBarProps> = ({ leftColor, rightColor }) => {
                     <Link className="navbar-brand" href="/">
         <p
           className="hover-text"
-          style={{color: `${leftColor}`}}
+          style={{color: `${textColor}`}}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
           dangerouslySetInnerHTML={{ __html: word }}
@@ -135,7 +147,7 @@ const NavBar:React.FC<NavBarProps> = ({ leftColor, rightColor }) => {
           ))} */}
         </p>
         </Link>
-                    <div className="bg" style={{width:'4rem', height: '4rem', backgroundColor: `${rightColor}`, borderRadius:'50%'}}></div>
+                    <div className="bg" style={{width:'4rem', height: '4rem', backgroundColor: `${rgColor}`, borderRadius:'50%'}}></div>
                 </div>
             </nav>
         </AppContextProvider>

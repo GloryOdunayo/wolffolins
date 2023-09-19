@@ -21,8 +21,57 @@ import Leeum from '../components/Leeum'
 import Footer from '../components/Footer'
 import { changeNavbarColor } from '../utils/changeNavbarColor'
 import React from 'react'
+import { Waypoint } from 'react-waypoint';
 
 const Home: NextPage = () => {
+  const [activeComponent, setActiveComponent] = React.useState<string>('Showreel');
+  const [textColor, setTextColor] = React.useState<string>('black');
+  const handleWaypointEnter = (componentName: string) => {
+    setActiveComponent(componentName);
+  };
+  const updateTextColor = (componentName: string) => {
+    if (componentName === 'Showreel') {
+      return 'black';
+    } else if (componentName === 'InstaCard') {
+      return 'black';
+    } else if (componentName === 'Gsk') {
+      return 'black';
+    } else if (componentName === 'Xpeng') {
+      return 'white';
+    } else if (componentName === 'Workspace') {
+      return 'black';
+    } else if (componentName === 'Tiktok') {
+      return 'white';
+    } else if (componentName === 'Uber') {
+      return 'white';
+    } else if (componentName === 'McKinsey') {
+      return 'white';
+    } else if (componentName === 'Economist') {
+      return 'black';
+    } else if (componentName === 'DailyPay') {
+      return 'black';
+    } else if (componentName === 'Abrdn') {
+      return 'white';
+    } else if (componentName === 'TheMet') {
+      return 'black';
+    } else if (componentName === 'Sage') {
+      return 'white';
+    } else if (componentName === 'Leeum') {
+      return 'white';
+    }
+    // Add more conditions as needed
+    return 'white'; // Default color if no condition matches
+  };
+  React.useEffect(() => {
+    const handleScroll = () => {
+      const updatedTextColor = updateTextColor(activeComponent);
+      setTextColor(updatedTextColor);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [activeComponent]);
   return (
     <div className={styles.container}>
       <Head>
@@ -31,32 +80,91 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-      <NavBar leftColor="black" rightColor="rgb(255,235,0)" />
+      <NavBar leftColor="black" rightColor="rgb(255,235,0)" activeComponent={activeComponent} textColor={textColor} />
       {/* <ScrollingSection /> */}
-        <Showreel />
-        <InstaCard />
-        <Gsk />
-        <Xpeng />
-        <Workspace />
-        <Tiktok />
-        <Uber />
-        <McKinsey/>
-        <Economist/>
-        <DailyPay/>
-        <Abrdn/>
-        <TheMet/>
-        <Sage/>
-        <Leeum/>
-        <div className="" style={{height:'', backgroundColor:'black'}}>
-          <div className="py-5">
-            <span className="text-white">
-              <div className="home-block--details"><a href="" className=""><h3>Let&apos;s talk about you</h3>
-                <p className="serif-18"><i className="fa fa-arrow-right" aria-hidden="true"></i> <span className="text">Get in touch</span></p>
-                </a>
-              </div>
-            </span>
+        <Waypoint onEnter={() => handleWaypointEnter('Showreel')} topOffset="100%" bottomOffset="100%">
+          <div className="">
+            <Showreel />
           </div>
-        </div>
+        </Waypoint>
+        <Waypoint onEnter={() => handleWaypointEnter('InstaCard')} topOffset="100%" bottomOffset="100%">
+          <div className="">
+            <InstaCard />
+          </div>
+        </Waypoint>
+        {/* <InstaCard /> */}
+        <Waypoint onEnter={() => handleWaypointEnter('Gsk')} topOffset="100%" bottomOffset="100%">
+          <div className="">
+            <Gsk />
+          </div>
+        </Waypoint>
+        <Waypoint onEnter={() => handleWaypointEnter('Xpeng')} topOffset="100%" bottomOffset="100%">
+          <div className="">
+            <Xpeng />
+          </div>
+        </Waypoint>
+        <Waypoint onEnter={() => handleWaypointEnter('Workspace')} topOffset="10%" bottomOffset="100%">
+          <div className="">
+            <Workspace />
+          </div>
+        </Waypoint>
+        <Waypoint onEnter={() => handleWaypointEnter('Tiktok')} topOffset="30%" bottomOffset="100%">
+          <div className="">
+            <Tiktok />
+          </div>
+        </Waypoint>
+        <Waypoint onEnter={() => handleWaypointEnter('Uber')} topOffset="30%" bottomOffset="100%">
+          <div className="">
+            <Uber />
+          </div>
+        </Waypoint>
+        <Waypoint onEnter={() => handleWaypointEnter('McKinsey')} topOffset="30%" bottomOffset="100%">
+          <div className="">
+            <McKinsey/>
+          </div>
+        </Waypoint>
+        <Waypoint onEnter={() => handleWaypointEnter('Economist')} topOffset="30%" bottomOffset="100%">
+          <div className="">
+            <Economist/>
+          </div>
+        </Waypoint>
+        <Waypoint onEnter={() => handleWaypointEnter('DailyPay')} topOffset="30%" bottomOffset="1%">
+          <div className="">
+            <DailyPay/>
+          </div>
+        </Waypoint>
+        <Waypoint onEnter={() => handleWaypointEnter('Abrdn')} topOffset="30%" bottomOffset="1%">
+          <div className="">
+            <Abrdn/>
+          </div>
+        </Waypoint>
+        <Waypoint onEnter={() => handleWaypointEnter('TheMet')} topOffset="30%" bottomOffset="1%">
+          <div className="">
+            <TheMet/>
+          </div>
+        </Waypoint>
+        <Waypoint onEnter={() => handleWaypointEnter('Sage')} topOffset="30%" bottomOffset="1%">
+          <div className="">
+            <Sage/>
+          </div>
+        </Waypoint>
+        <Waypoint onEnter={() => handleWaypointEnter('Leeum')} topOffset="30%" bottomOffset="1%">
+          <div className="">
+            <Leeum/>
+          </div>
+        </Waypoint>
+        <Waypoint onEnter={() => handleWaypointEnter('')} topOffset="30%" bottomOffset="1%">
+          <div className="" style={{height:'', backgroundColor:'black'}}>
+            <div className="py-5">
+              <span className="text-white">
+                <div className="home-block--details"><a href="" className=""><h3>Let&apos;s talk about you</h3>
+                  <p className="serif-18"><i className="fa fa-arrow-right" aria-hidden="true"></i> <span className="text">Get in touch</span></p>
+                  </a>
+                </div>
+              </span>
+            </div>
+          </div>
+        </Waypoint>
         <Footer/>
       </main>
     </div>

@@ -82,7 +82,13 @@ a {
   // font-size: 30px;
   font-size: clamp(40px,-16.98366px + 7.42942vw,90px);
   line-height: 1.11;
-  padding: 5rem 0.1rem 5rem 5rem;
+  display: flex!important;
+  border: 1px solid green;
+  vertical-align: middle !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: auto !important;
+  // padding: 5rem 0.1rem 5rem 5rem;
   // margin: auto;
   vertical-align: middle !important;
 }
