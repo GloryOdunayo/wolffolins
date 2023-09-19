@@ -1,26 +1,54 @@
-import Link from "next/link";
-import Image from 'next/image';
-import logo from '../public/logo.png';
-import React from "react";
-import { changeNavbarColor } from "../utils/changeNavbarColor";
-import { AppContextProvider, useAppContext } from "./AppContext";
+// // components/RandomLetterSize.tsx
+// import React, { useState } from 'react';
 
-interface NavBarProps {
-    leftColor: string;
-    rightColor: string;
-}
+// const RandomLetterSize = () => {
+//   const word = 'wolffolins';
+//   const [randomLetter, setRandomLetter] = useState('');
 
-// const NavBar: React.FC<NavBarProps> = ({ leftColor, rightColor }) => {
-//     const { currentComponent, textColor, setCurrentComponent } = useAppContext();
-//     return (
-//     <>
-//         <AppContextProvider>
-//             <nav className="navbar bg-body-transparent position-fixed container-fluid" style={{zIndex: '99'}}>
-//                 <div className="container-fluid">
-//                     <Link className="navbar-brand" href="/">
-//                         <div className="navbar-link">Wool</div>
-//                         <div className="col-2 d-flex navbar-link">
-//                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 250" preserveAspectRatio="xMidYMid meet" width={1000}>
+//   const handleMouseEnter = () => {
+//     const letters = [...word];
+//     const uniqueLetters = Array.from(new Set(letters));
+//     const randomIndex = Math.floor(Math.random() * uniqueLetters.length);
+//     const selectedLetter = uniqueLetters[randomIndex];
+
+//     // Set the selected letter as the randomLetter
+//     setRandomLetter(selectedLetter);
+//   };
+
+//   const handleMouseLeave = () => {
+//     setRandomLetter('');
+//   };
+
+//   return (
+//     <p
+//       className="hover-text"
+//       onMouseEnter={handleMouseEnter}
+//       onMouseLeave={handleMouseLeave}
+//     >
+//       {word.split('').map((letter, index) => (
+//         <span
+//           key={index}
+//           className={letter === randomLetter ? 'random-letter' : ''}
+//         >
+//           {letter}
+//         </span>
+//       ))}
+//     </p>
+//   );
+// };
+
+// export default RandomLetterSize;
+
+// interface NavBarProps {
+//     leftColor: string;
+//     rightColor: string;
+// }
+// components/RandomLetterSize.js
+// import React, { useState } from 'react';
+
+// const RandomLetterSize: React.FC<NavBarProps> = ({ leftColor, rightColor }) => {
+//   const svgContent = (
+//     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 250" preserveAspectRatio="xMidYMid meet" width={1000}>
 //                                 <defs><clipPath id="__lottie_element_293"><rect width="920" height="250" x="0" y="0"></rect></clipPath></defs><g clip-path="url(#__lottie_element_293)"><g style={{display: "block"}} transform="matrix(1,0,0,1,499.64300537109375,160.01400756835938)" opacity="1"><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill={leftColor} fillOpacity="1" d=" M-72.15899658203125,78.79399871826172 C-45.18899917602539,78.79399871826172 -28.823999404907227,65.30899810791016 -28.823999404907227,45.409000396728516 C-28.823999404907227,1.2890000343322754 -90.88099670410156,25.24799919128418 -90.88099670410156,3.121999979019165 C-90.88099670410156,-3.947999954223633 -84.59600067138672,-8.005999565124512 -73.33699798583984,-8.005999565124512 C-62.34000015258789,-8.005999565124512 -55.79399871826172,-2.9010000228881836 -55.138999938964844,5.609000205993652 C-55.138999938964844,5.609000205993652 -30.003000259399414,5.609000205993652 -30.003000259399414,5.609000205993652 C-30.003000259399414,-15.862000465393066 -47.676998138427734,-28.822999954223633 -72.94499969482422,-28.822999954223633 C-98.4739990234375,-28.822999954223633 -114.18499755859375,-16.38599967956543 -114.18499755859375,3.7760000228881836 C-114.18499755859375,47.50299835205078 -52.38999938964844,24.593000411987305 -52.38999938964844,45.801998138427734 C-52.38999938964844,53.13399887084961 -59.327999114990234,57.97800064086914 -71.63500213623047,57.97800064086914 C-84.33399963378906,57.97800064086914 -91.53500366210938,51.694000244140625 -91.7969970703125,41.220001220703125 C-91.7969970703125,41.220001220703125 -117.3270034790039,41.220001220703125 -117.3270034790039,41.220001220703125 C-117.3270034790039,64.78600311279297 -98.73600006103516,78.79399871826172 -72.15899658203125,78.79399871826172z"></path></g><g opacity="1" transform="matrix(1,0,0,1,0,0)">
 //                             <path fill={leftColor} fillOpacity="1" d=" M-229.49600219726562,76.6989974975586 C-229.49600219726562,76.6989974975586 -206.9770050048828,76.6989974975586 -206.9770050048828,76.6989974975586 C-206.9770050048828,76.6989974975586 -206.9770050048828,10.321999549865723 -206.9770050048828,10.321999549865723 C-206.9770050048828,10.321999549865723 -156.17999267578125,76.6989974975586 -156.17999267578125,76.6989974975586 C-156.17999267578125,76.6989974975586 -133.0070037841797,76.6989974975586 -133.0070037841797,76.6989974975586 C-133.0070037841797,76.6989974975586 -133.0070037841797,-26.72800064086914 -133.0070037841797,-26.72800064086914 C-133.0070037841797,-26.72800064086914 -155.65699768066406,-26.72800064086914 -155.65699768066406,-26.72800064086914 C-155.65699768066406,-26.72800064086914 -155.65699768066406,40.04100036621094 -155.65699768066406,40.04100036621094 C-155.65699768066406,40.04100036621094 -206.322998046875,-26.72800064086914 -206.322998046875,-26.72800064086914 C-206.322998046875,-26.72800064086914 -229.49600219726562,-26.72800064086914 -229.49600219726562,-26.72800064086914 C-229.49600219726562,-26.72800064086914 -229.49600219726562,76.6989974975586 -229.49600219726562,76.6989974975586z"></path>
 //                             </g><g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill={leftColor} fillOpacity="1" d=" M-271.0950012207031,76.6989974975586 C-271.0950012207031,76.6989974975586 -248.5760040283203,76.6989974975586 -248.5760040283203,76.6989974975586 C-248.5760040283203,76.6989974975586 -248.5760040283203,-26.72800064086914 -248.5760040283203,-26.72800064086914 C-248.5760040283203,-26.72800064086914 -271.0950012207031,-26.72800064086914 -271.0950012207031,-26.72800064086914 C-271.0950012207031,-26.72800064086914 -271.0950012207031,76.6989974975586 -271.0950012207031,76.6989974975586z"></path>
@@ -62,85 +90,96 @@ interface NavBarProps {
 //                             <g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill={leftColor} fillOpacity="1" d=" M-270.6109924316406,-63.20100021362305 C-288.94000244140625,-63.20100021362305 -301.2460021972656,-76.81700134277344 -301.2460021972656,-96.19300079345703 C-301.2460021972656,-114.12899780273438 -288.94000244140625,-126.8280029296875 -270.6109924316406,-126.8280029296875 C-252.80599975585938,-126.8280029296875 -240.76100158691406,-114.12899780273438 -240.76100158691406,-96.19300079345703 C-240.76100158691406,-76.81700134277344 -252.80599975585938,-63.20100021362305 -270.6109924316406,-63.20100021362305z M-270.6109924316406,-41.20600128173828 C-239.19000244140625,-41.20600128173828 -217.45700073242188,-63.7239990234375 -217.45700073242188,-95.53800201416016 C-217.45700073242188,-126.6969985961914 -239.19000244140625,-148.822998046875 -270.6109924316406,-148.822998046875 C-302.5559997558594,-148.822998046875 -324.54998779296875,-126.6969985961914 -324.54998779296875,-95.53800201416016 C-324.54998779296875,-63.7239990234375 -302.5559997558594,-41.20600128173828 -270.6109924316406,-41.20600128173828z"></path></g>
 //                             <g opacity="1" transform="matrix(1,0,0,1,0,0)"><path fill={leftColor} fillOpacity="1" d=" M-452.52099609375,-43.30099868774414 C-452.52099609375,-43.30099868774414 -428.0379943847656,-43.30099868774414 -428.0379943847656,-43.30099868774414 C-428.0379943847656,-43.30099868774414 -405.3890075683594,-113.08100128173828 -405.3890075683594,-113.08100128173828 C-405.3890075683594,-113.08100128173828 -382.4779968261719,-43.30099868774414 -382.4779968261719,-43.30099868774414 C-382.4779968261719,-43.30099868774414 -357.9960021972656,-43.30099868774414 -357.9960021972656,-43.30099868774414 C-357.9960021972656,-43.30099868774414 -324.87298583984375,-146.72799682617188 -324.87298583984375,-146.72799682617188 C-324.87298583984375,-146.72799682617188 -349.8789978027344,-146.72799682617188 -349.8789978027344,-146.72799682617188 C-349.8789978027344,-146.72799682617188 -370.82598876953125,-73.80500030517578 -370.82598876953125,-73.80500030517578 C-370.82598876953125,-73.80500030517578 -391.77301025390625,-146.72799682617188 -391.77301025390625,-146.72799682617188 C-391.77301025390625,-146.72799682617188 -419.135986328125,-146.72799682617188 -419.135986328125,-146.72799682617188 C-419.135986328125,-146.72799682617188 -439.69000244140625,-73.80500030517578 -439.69000244140625,-73.80500030517578 C-439.69000244140625,-73.80500030517578 -460.7690124511719,-146.72799682617188 -460.7690124511719,-146.72799682617188 C-460.7690124511719,-146.72799682617188 -485.64300537109375,-146.72799682617188 -485.64300537109375,-146.72799682617188 C-485.64300537109375,-146.72799682617188 -452.52099609375,-43.30099868774414 -452.52099609375,-43.30099868774414z"></path></g></g></g>
 //                             </svg>
-//                             WOLLF <br />
-//                             OLINS
-//                         </div>
-//                     </Link>
-//                     <div className="bg" style={{width:'4rem', height: '4rem', backgroundColor: `${rightColor}`, borderRadius:'50%'}}></div>
-//                 </div>
-//             </nav>
-//         </AppContextProvider>
-//     </>
-// );
+//   );
+
+//   const [randomLetter, setRandomLetter] = useState('');
+
+//   const handleMouseEnter = () => {
+//     const letters = Array.from(svgContent.props.children[2].props.children);
+//     const uniqueLetters = Array.from(new Set(letters.map((letter) => letter.props.children)));
+//     const randomIndex = Math.floor(Math.random() * uniqueLetters.length);
+//     const selectedLetter = uniqueLetters[randomIndex];
+
+//     // Set the selected letter as the randomLetter
+//     setRandomLetter(selectedLetter);
+//   };
+
+//   const handleMouseLeave = () => {
+//     setRandomLetter('');
+//   };
+
+//   return (
+//     <div
+//       className="hover-svg"
+//       onMouseEnter={handleMouseEnter}
+//       onMouseLeave={handleMouseLeave}
+//     >
+//       {React.cloneElement(svgContent, {
+//         children: React.cloneElement(svgContent.props.children, {
+//           children: svgContent.props.children[2].props.children.map((letter, index) => (
+//             React.cloneElement(letter, {
+//               key: index,
+//               style: {
+//                 fontSize: letter.props.children === randomLetter ? '40px' : '20px', // Adjust font sizes as needed
+//               },
+//             })
+//           )),
+//         }),
+//       })}
+//     </div>
+//   );
 // };
-const NavBar:React.FC<NavBarProps> = ({ leftColor, rightColor }) => {
-  const initialWord = 'WOLFF<br>OLINS';
-  const [word, setWord] = React.useState(initialWord);
-  const [randomLetter, setRandomLetter] = React.useState('');
+
+// export default RandomLetterSize;
+
+
+// components/RandomLetterSize.tsx
+import React, { useState } from 'react';
+
+const RandomLetterSize = () => {
+  const initialWord = 'wolffolins';
+  const [word, setWord] = useState(initialWord);
+  const [randomLetter, setRandomLetter] = useState('');
 
   const handleMouseEnter = () => {
     const letters = [...initialWord];
     const uniqueLetters = Array.from(new Set(letters));
     const randomIndex = Math.floor(Math.random() * uniqueLetters.length);
     const selectedLetter = uniqueLetters[randomIndex];
-    setRandomLetter(selectedLetter);
 
-    const indices = [];
-    for (let i = 0; i < letters.length; i++) {
-      if (letters[i] === selectedLetter) {
-        indices.push(i);
-      }
+    // If the selected letter appears more than once in the initialWord, set it as the randomLetter
+    if (letters.filter((letter) => letter === selectedLetter).length > 1) {
+      setRandomLetter(selectedLetter);
+      // Break the word into two parts based on the selected letter
+      const wordParts = initialWord.split(selectedLetter);
+      setWord(wordParts.join(` ${selectedLetter} `)); // Add spaces around the selected letter
+    } else {
+      setRandomLetter(selectedLetter);
+      setWord(initialWord);
     }
-    
-    for (const index of indices) {
-      letters[index] = `<span class="random-width">${letters[index]}</span>`;
-    }
-
-    setRandomLetter(selectedLetter);
-    setWord(letters.join(''));
-    // if (letters[randomIndex] !== '<' && letters[randomIndex] !== '>') {
-    //   letters[randomIndex] = `<span class="random-width">${letters[randomIndex]}</span>`;
-    // }
-    // setWord(letters.join(''))
-    // if (letters.length > 5) {
-    //   letters.splice(5, 0, '<br>');
-    // }
   };
-  
 
   const handleMouseLeave = () => {
     setRandomLetter('');
     setWord(initialWord);
   };
-  return (
-    <>
-      <AppContextProvider>
-            <nav className="navbar bg-body-transparent position-fixed container-fluid" style={{zIndex: '99'}}>
-                <div className="container-fluid">
-                    <Link className="navbar-brand" href="/">
-        <p
-          className="hover-text"
-          style={{color: `${leftColor}`}}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-          dangerouslySetInnerHTML={{ __html: word }}
-        >
-          {/* {word.split('').map((letter, index) => (
-            <span
-              key={index}
-              className={letter === randomLetter ? 'random-letter' : ''} style={{color: `${leftColor}`}}
-              dangerouslySetInnerHTML={{ __html: letter }}>
-              
-            </span>
-          ))} */}
-        </p>
-        </Link>
-                    <div className="bg" style={{width:'4rem', height: '4rem', backgroundColor: `${rightColor}`, borderRadius:'50%'}}></div>
-                </div>
-            </nav>
-        </AppContextProvider>
-    </>
-      );
-}
 
-export default NavBar;
+  return (
+    <p
+      className="hover-text"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      {word.split('').map((letter, index) => (
+        <span
+          key={index}
+          className={letter === randomLetter ? 'random-letter' : ''}
+        >
+          {letter}
+        </span>
+      ))}
+    </p>
+  );
+};
+
+export default RandomLetterSize;

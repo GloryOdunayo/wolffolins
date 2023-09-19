@@ -19,6 +19,8 @@ import TheMet from '../components/TheMet'
 import Sage from '../components/Sage'
 import Leeum from '../components/Leeum'
 import Footer from '../components/Footer'
+import { changeNavbarColor } from '../utils/changeNavbarColor'
+import React from 'react'
 
 const Home: NextPage = () => {
   return (
@@ -46,12 +48,14 @@ const Home: NextPage = () => {
         <Sage/>
         <Leeum/>
         <div className="" style={{height:'', backgroundColor:'black'}}>
-          <span className="text-white">
-            <div className="home-block--details"><a href="" className=""><h3>Let&apos;s talk about you</h3>
-              <p className="serif-18"></p>
-              </a>
-            </div>
-          </span>
+          <div className="py-5">
+            <span className="text-white">
+              <div className="home-block--details"><a href="" className=""><h3>Let&apos;s talk about you</h3>
+                <p className="serif-18"><i className="fa fa-arrow-right" aria-hidden="true"></i> <span className="text">Get in touch</span></p>
+                </a>
+              </div>
+            </span>
+          </div>
         </div>
         <Footer/>
       </main>

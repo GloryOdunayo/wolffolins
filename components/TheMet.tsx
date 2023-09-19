@@ -16,6 +16,9 @@ const TheMet = () => {
                 </span>
                 </a>
                 </div>
+                <div className="login">
+            <i className="fa fa-arrow-right" aria-hidden="true"></i>
+          </div>
             </span>
         </div>
     </div>

@@ -15,6 +15,9 @@ const Workspace = () => {
           </svg>  */}
           </span>
           </a>
+          <div className="login">
+            <i className="fa fa-arrow-right" aria-hidden="true"></i>
+          </div>
           </div>
         </span>
       </div>
