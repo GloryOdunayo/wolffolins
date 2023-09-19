@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <div>
       {/* <h1>Welcome to Next.js Scrolling Sections</h1> */}
-      <NavBar leftColor="rgb(255,235,0)" rightColor="rgb(255,235,0)" />
+      {/* <NavBar leftColor="rgb(255,235,0)" rightColor="rgb(255,235,0)" /> */}
       {/* <ScrollingSection /> */}
       {/* <Showreel />
       <InstaCard />
